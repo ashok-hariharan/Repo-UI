@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+/* align items to center */
+.text-center{
+    text-align: center;
+}
+/* body styles */
+body{
+    background: whitesmoke;
+    color:black;
+    font-size:12px;
+}
+.bg-light {
+    background-color: #383d41!important;
+}

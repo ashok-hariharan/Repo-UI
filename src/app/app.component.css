@@ -1,0 +1,8 @@
+.header{
+    background: grey;
+    margin-bottom: 2px
+}
+.col-md-12{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
