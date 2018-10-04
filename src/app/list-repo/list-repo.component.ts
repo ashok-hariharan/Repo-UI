@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListRepoComponent implements OnInit {
   headings:any=[];
-  constructor() { }
+  resultData:any=[];
+  userName:any="";
+  constructor() { 
+  }
 
   ngOnInit() {
     this.headings=["Repository Name","Created Date","Stars","Action"];
+    this.userName="ashok-hariharan";
+    //this.resultData=null;
   }
 
 }
