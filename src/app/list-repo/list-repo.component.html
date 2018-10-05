@@ -1,26 +1,32 @@
-<div class="text-center">
+<div *ngIf="displayTable">
+
+
+  <div class="text-center">
     <h4>User Name : {{userName}} </h4>
   </div>
-<table class="table table-striped" *ngIf="resultData;else ElseBlock">
-  <thead>
-    <tr>
-      <th class="text-center" *ngFor="let column of headings">{{column | uppercase}}</th>
-    </tr>
-  </thead>
-  <tbody  class="text-center" >
-    <tr>
-      <td>Repo-UI</td>
-      <td>05-10-2018</td>
-      <td>5</td>
-      <td>
-        <div class="btn-group">
-        <button type="button" class="btn btn-success" value="Star">Star</button>
-        <button type="button" class="btn btn-warning" value="Unstar">Unstar</button>
-        </div>
-      </td>
-     </tr>
-  </tbody>
-</table>
-<ng-template #ElseBlock>
-  <h5 class="text-center">No Records Found</h5>
-</ng-template>
+  <table class="table table-striped" *ngIf="repoData ;else ElseBlock">
+    <thead>
+      <tr>
+        <th class="text-center" *ngFor="let column of repoColumns">{{column | uppercase}}</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+
+      <tr *ngFor="let item of repoData">
+        <td *ngFor="let col of repoColumns">
+          {{item[col]}}
+        </td>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-success" value="Star" (click)="starRepo(item.repo)">Star</button>
+            <button type="button" class="btn btn-warning" value="Unstar"(click)="unstarRepo(item.repo)" >Unstar</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #ElseBlock>
+    <h5 class="text-center">No Records Found</h5>
+  </ng-template>
+
+</div>

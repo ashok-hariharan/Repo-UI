@@ -1,11 +1,11 @@
 <div class=" col-md-12 ">
     <div class="form-group">
       <br>
-        <input type="text" class="form-control" id="usr">
+        <input type="text" class="form-control" id="usr" name="userid" (change)="repoData=[]" [(ngModel)]="userid">
       </div>
-      <input type="submit" class="btn btn-info" value="Submit">
+      <input type="submit" class="btn btn-info" (click)="search(userid)" value="Submit">
 </div>
 <br>
 <div class="col-md-12">
-  <app-list-repo></app-list-repo>
+  <app-list-repo [repoData]="repoData" [username]="userid"></app-list-repo>
 </div>

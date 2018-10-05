@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LandingPageService } from './landing-page.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _service:LandingPageService) { }
 
   ngOnInit() {
   }
-
+repoData: any[]=[];
+repoColumns:any=[];
+userid:string="";
+//searching data
+  search(userid){
+    this._service.getUser(userid).subscribe(data=>{
+      this.repoData=data;
+      console.log(this.repoData)
+    })
+  }
 }
